@@ -1,0 +1,72 @@
+<main>
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-indicators" style='padding:25px'>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <%= image_tag("gossip1.jpg", class: "d-block w-100", size: "700x500", alt: "Image de Gossip") %>
+
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Nos meilleures GOSSIPS</h1>
+            <p>Some representative placeholder content for the first slide of the carousel.</p>
+            <p><%= link_to "Rentre ton nom d'utilisateur", user_path, :class=>"btn btn-lg btn-primary" %></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <%= image_tag("gossip2.jpg", class: "d-block w-100", size: "700x500", alt: "Image de Gossip") %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Nos meilleures GOSSIPS</h1>
+            <p>Some representative placeholder content for the second slide of the carousel.</p>
+            <p><%= link_to "Rentre ton nom d'utilisateur", user_path, :class=>"btn btn-lg btn-primary" %></p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <%= image_tag("gossip3.jpg", class: "d-block w-100", size: "700x500", alt: "Image de Gossip") %>
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Nos meilleures GOSSIPS</h1>
+            <p>Some representative placeholder content for the third slide of this carousel.</p>
+            <p><%= link_to "Rentre ton nom d'utilisateur", user_path, :class=>"btn btn-lg btn-primary" %></p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
+
+<div class="row px-4 py-2">
+  <% Gossip.all.each do |gossip|%> 
+    <div class="col-sm-4 my-2">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title"><%= gossip.title %></h5>
+          <p class="card-text">Author: <%= gossip.user.first_name %></p>
+            <%= link_to "See More", "/gossip/#{gossip.id}", class:"btn btn-pink"%>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<% end %>
+
+
+
+  
+</main>

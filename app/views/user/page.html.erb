@@ -1,0 +1,11 @@
+<h1>La page de <%= @user.first_name%></h1>
+
+<p><%= @user.first_name%> <%= @user.last_name%> a aujourd'hui <%= @user.age%> ans. Contacte le à l'adresse suivant : <%= @user.email%></p>
+
+<div class="user-gossips">
+  <% @user_gossips.each do |gossip| %>
+    <div class="gossip">
+      <p><%= gossip.title %> : "<%= gossip.content %>"</p>
+    </div>
+  <% end %>
+</div>

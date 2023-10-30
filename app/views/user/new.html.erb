@@ -1,0 +1,16 @@
+<form action=<%=user_path%> method="POST">
+  <div class="container w-25 mt-5">
+    <div class="form-row">
+      <div class="col">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <input type="text" class="form-control mb-2" placeholder="Prénom" name="first_name">
+      </div>
+      <div class="col">
+        <input type="text" class="form-control mb-2" placeholder="Nom" name="last_name">
+      </div>
+    </div>
+    <div class="col-auto text-center">
+      <button type="submit" class="btn btn-primary mb-2">Envoyer</button>
+    </div>
+  </div>
+</form>

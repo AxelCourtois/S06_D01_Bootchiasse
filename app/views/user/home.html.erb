@@ -1,0 +1,19 @@
+<h1>Bienvenue <%= @user.first_name.capitalize() %> !</h1>
+
+
+
+<% Gossip.all.each do |gossip| %>
+  <div class="card-group">
+    <div class="card" style="width: 18rem;">
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= gossip.user.first_name %>
+        </h5>
+        <p class="card-text"><%= link_to gossip.title, "/gossip/#{gossip.id}" %></p>
+     </div>
+    </div>
+  </div>
+
+  
+
+<% end %>

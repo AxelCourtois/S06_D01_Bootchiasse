@@ -1,0 +1,5 @@
+<h2><%= link_to @gossip.user.first_name, "/user/#{@gossip.user.id}" %> a dit un jour...</h2>
+<p>
+  <%= @gossip.title%> : "<%= @gossip.content%> " le :  <%= @gossip.created_at%>  
+</p>
+
